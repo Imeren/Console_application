@@ -1,18 +1,14 @@
 #include <iostream>
-#include <vector>
 #include "library.h"
+#include <cstdlib>
 
 using namespace std;
 
-int main()
+int main(int argc, char * argv[])
 {
-    int x,y;
-    //vector <int> simple_number;
-    cout << "Write left border: ";
-    cin >> x;
-    cout << "Write right border: ";
-    cin >> y;
-    for (int a : list(x,y))
+    int a = atoi(argv[1]);
+    int b = atoi(argv[2]);
+    for (int a : list(a,b))
     {
         cout << a << endl;
     }
