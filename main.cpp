@@ -1,16 +1,34 @@
 #include <iostream>
 #include "library.h"
 #include <cstdlib>
+#include <sstream>
 
 using namespace std;
 
 int main(int argc, char * argv[])
 {
-    int a = atoi(argv[1]);
-    int b = atoi(argv[2]);
+    if(argc < 3) {
+        // вывести сообщение об ошибке и завершить работу программы
+        std::cerr << "Missing parameters" << std::endl;
+        return 1;
+    }
+    istringstream astr(argv[1]), bstr(argv[2]);
+    int a, b;
+    astr >> a;
+    bstr >> b;
+    if(astr.fail() || !astr.eof()) {
+        // вывести сообщение об ошибке и завершить работу программы
+        std::cerr << "A must be an integer" << std::endl;
+        return 2;
+    }
+    if(bstr.fail() || !bstr.eof()) {
+        // вывести сообщение об ошибке и завершить работу программы
+        std::cerr << "B must be an integer" << std::endl;
+        return 2;
+    }
     for (int a : list(a,b))
     {
-        cout << a << endl;
+        std::cerr << a << endl;
     }
     return 0;
 }
