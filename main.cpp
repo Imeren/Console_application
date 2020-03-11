@@ -26,6 +26,18 @@ int main(int argc, char * argv[])
         std::cerr << "B must be an integer" << std::endl;
         return 2;
     }
+    if (a < 0){
+        std::cerr << "A should not be negative" << std::endl;
+        return 3;
+    }
+    if (b < 0){
+        std::cerr << "B must not be negative" << std::endl;
+        return 3;
+    }
+    if (a > b){
+        std::cerr << "A must be smaller than B" << std::endl;
+        return 4;
+    }
     for (int a : list(a,b))
     {
         std::cerr << a << endl;
