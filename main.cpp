@@ -17,12 +17,10 @@ int main(int argc, char * argv[])
     astr >> a;
     bstr >> b;
     if(astr.fail() || !astr.eof()) {
-        // вывести сообщение об ошибке и завершить работу программы
         std::cerr << "A must be an integer" << std::endl;
         return 2;
     }
     if(bstr.fail() || !bstr.eof()) {
-        // вывести сообщение об ошибке и завершить работу программы
         std::cerr << "B must be an integer" << std::endl;
         return 2;
     }
@@ -40,7 +38,7 @@ int main(int argc, char * argv[])
     }
     for (int a : list(a,b))
     {
-        std::cerr << a << endl;
+        std::cout << a << endl;
     }
     return 0;
 }
